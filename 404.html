@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ไม่พบหน้าที่ต้องการ - JLK Transservice</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="static/css/style.css" rel="stylesheet">
+</head>
+<body class="bg-background text-foreground">
+    <div class="min-h-screen flex items-center justify-center bg-muted/30">
+        <div class="text-center p-8">
+            <div class="mb-8">
+                <i class="fas fa-exclamation-triangle text-6xl text-secondary mb-4"></i>
+            </div>
+            
+            <h1 class="text-4xl font-bold mb-4 text-foreground">404</h1>
+            <p class="text-xl text-muted-foreground mb-4">ขออภัย! ไม่พบหน้าที่ต้องการ</p>
+            <p class="text-muted-foreground mb-8">
+                หน้าที่คุณต้องการอาจถูกย้าย หรือไม่มีอยู่แล้ว
+            </p>
+            
+            <div class="space-y-4">
+                <a href="index.html" class="btn btn-lg bg-primary hover:bg-primary/90 text-primary-foreground inline-block">
+                    <i class="fas fa-home mr-2"></i>
+                    กลับสู่หน้าแรก
+                </a>
+                
+                <br>
+                
+                <a href="services.html" class="btn btn-outline btn-lg inline-block">
+                    <i class="fas fa-truck mr-2"></i>
+                    ดูบริการของเรา
+                </a>
+            </div>
+            
+            <div class="mt-12 p-6 bg-card rounded-lg border border-border max-w-md mx-auto">
+                <h3 class="font-semibold mb-3 text-card-foreground">ติดต่อเรา</h3>
+                <div class="space-y-2 text-sm text-muted-foreground">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-phone w-5 text-primary mr-2"></i>
+                        <span>02-123-4567</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-envelope w-5 text-primary mr-2"></i>
+                        <span>info@logithai.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Log 404 error for analytics
+        console.error('404 Error: User attempted to access non-existent route:', window.location.pathname);
+        
+        // Optional: Send 404 analytics to backend
+        if (window.location.pathname !== '/404.html') {
+            fetch('/api/404-log', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    path: window.location.pathname,
+                    referrer: document.referrer,
+                    timestamp: new Date().toISOString()
+                })
+            }).catch(err => console.log('Analytics logging failed:', err));
+        }
+    </script>
+
+    <!-- Include Footer -->
+    <div id="footer-container"></div>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>

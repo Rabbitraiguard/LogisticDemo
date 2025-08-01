@@ -1,0 +1,64 @@
+# JLK Transservice - Python Backend Requirements
+# บริการโลจิสติกส์ระดับมืออาชีพ
+
+# Core web framework
+Flask==2.3.3
+Werkzeug==2.3.7
+
+# CORS support for API
+Flask-CORS==4.0.0
+
+# Email support
+secure-smtplib==0.1.1
+
+# JSON handling (built-in with Python 3.7+)
+# json
+
+# SQLite database (built-in with Python)
+# sqlite3
+
+# Date and time handling (built-in)
+# datetime
+
+# Logging (built-in)
+# logging
+
+# Optional: For production deployment
+gunicorn==21.2.0
+
+# Optional: For environment variables
+python-dotenv==1.0.0
+
+# Optional: For input validation
+cerberus==1.3.4
+
+# Optional: For password hashing (if adding authentication)
+bcrypt==4.0.1
+
+# Optional: For JWT tokens (if adding authentication)
+PyJWT==2.8.0
+
+# Optional: For database migrations
+Flask-Migrate==4.0.5
+
+# Optional: For database ORM
+SQLAlchemy==2.0.21
+Flask-SQLAlchemy==3.0.5
+
+# Optional: For form handling
+WTForms==3.0.1
+Flask-WTF==1.2.1
+
+# Optional: For email templates
+Jinja2==3.1.2
+
+# Optional: For testing
+pytest==7.4.2
+pytest-flask==1.3.0
+
+# Optional: For code formatting
+black==23.9.1
+flake8==6.1.0
+
+# Optional: For environment management
+python-decouple==3.8
